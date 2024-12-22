@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-ju5de@3r=40vw9k$y1t0+hinjma3v9z&vd@hgpt_ea804%*o+v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+# ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGIN = [
     "ws://localhost:8000",
     "ws://10.0.2.2:8000",
@@ -103,13 +104,23 @@ CHANNEL_LAYERS = {
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'chatdatabase',  # Your database name
+        'USER': 'daniel',        # Your username
+        'PASSWORD': '#Profiler#25',  # Your password
+        'HOST': 'postgresql-189459-0.cloudclusters.net',  # Your host
+        'PORT': '10060',         # Your port
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
